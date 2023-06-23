@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Chat Screen</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mainContainer {
+            background: linear-gradient(#3c4329, #232323);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .innerContainer {
+            background-color: black;
+            width: 60%;
+            padding: 50px;
+        }
+
+        .header {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+
+        .header h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .chatContainer {
+            height: 720px;
+            width: 103%;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .messagesContainer {
+            max-height: 100%;
+        }
+
+        .messageContainer {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: flex-start;
+            word-wrap: break-word;
+        }
+
+        .messageContainer.userMessage {
+            justify-content: flex-start;
+        }
+
+        .messageContainer.responseMessage {
+            justify-content: flex-end;
+        }
+
+        .messageContainer.userMessage .imContainer {
+            margin-right: 10px;
+        }
+
+        .messageContainer.responseMessage .imContainer {
+            margin-left: 10px;
+        }
+
+        .messageContainer.userMessage .message,
+        .messageContainer.responseMessage .message {
+            color: white;
+            word-wrap: break-word;
+        }
+
+        .imContainer {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .imContainer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .btnContainer {
+            width: 100%;
+            display: flex;
+            position: fixed;
+            bottom: 10px;
+            width: inherit;
+        }
+
+        .btnContainer input {
+            width: calc(100% - 80px);
+            height: 45px;
+            border-radius: 8px;
+            padding-left: 10px;
+        }
+
+        .btnContainer input:focus {
+            outline: none !important;
+        }
+
+        .btnContainer button {
+            width: 70px;
+            margin-left: 10px;
+            height: 45px;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #c7f431;
+            color: white;
+            border: 1px solid #c7f431;
+        }
+
+        .message {
+            color: white;
+        }
+        p.message {
+  word-break: break-all;
+}
+    </style>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="innerContainer">
+            <div class="header">
+                <h1>Fine-tuning Open AI</h1>
+            </div>
+            <div class="chatContainer">
+                <div class="messagesContainer"></div>
+            </div>
+            <div class="btnContainer">
+                <input type="text" id="messageInput" placeholder="Send Message" />
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // API endpoint for sending and receiving messages
+    var apiEndpoint = "https://example.com/api/chat";
+    var host = window.location.protocol + "//" + window.location.host;
+
+    // Function to send a message via API and display it as a user message
+    function sendUserMessage(message) {
+        var userAvatarURL = "https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png";
+        var $messageContainer = $('<div class="messageContainer userMessage"></div>');
+        var $message = $('<p class="message"></p>').text(message);
+        var $imageContainer = $('<div class="imContainer"></div>');
+        var $image = $('<img>').attr('src', userAvatarURL);
+
+        $messageContainer.append($imageContainer);
+        $imageContainer.append($image);
+        $messageContainer.append($message);
+
+        $('.messagesContainer').append($messageContainer);
+
+        // Scroll to the bottom of the chat container
+        var chatContainer = $('.chatContainer');
+        chatContainer.scrollTop(chatContainer[0].scrollHeight);
+    }
+
+    // Function to receive a response message and display it
+    function receiveResponseMessage(message) {
+        var senderAvatarURL = "https://w7.pngwing.com/pngs/980/304/png-transparent-computer-icons-user-profile-avatar-heroes-silhouette-avatar-thumbnail.png";
+        var $messageContainer = $('<div class="messageContainer responseMessage"></div>');
+        
+        var $message = $('<p class="message"></p>').text(message);
+        $messageContainer.append($message);
+        var $image = $('<img>').attr('src', senderAvatarURL);
+        var $imageContainer = $('<div class="imContainer"></div>');
+       
+
+       $messageContainer.append($imageContainer);
+        $imageContainer.append($image);
+       
+
+        $('.messagesContainer').append($messageContainer);
+
+        // Scroll to the bottom of the chat container
+        var chatContainer = $('.chatContainer');
+        chatContainer.scrollTop(chatContainer[0].scrollHeight);
+    }
+
+    // Function to send a message via API and receive the response
+    function sendMessage(message) {
+        $.ajax({
+            type: 'POST',
+            url: `${host}/api/v1/openai/createCompletions`,
+            data: { message: message },
+            success: function (response) {
+                var responseData = response.data;
+                var reply = responseData;
+                receiveResponseMessage(reply);
+            },
+            error: function (error) {
+                console.error('Failed to send message:', error);
+            }
+        });
+    }
+
+    // Event listener for the send button
+    $('#sendButton').click(function () {
+        var message = $('#messageInput').val();
+        if (message) {
+            $('#messageInput').val('');
+            sendUserMessage(message);
+            sendMessage(message);
+        }
+    });
+
+    // Search value by pressing Enter
+    $("#messageInput").keyup(function (event) {
+        if (event.keyCode === 13) {
+            $("#sendButton").click();
+        }
+    });
+</script>
+
+</html>

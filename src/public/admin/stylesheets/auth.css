@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
+body{
+    background: #2f4050;
+}
+
+.loginPageiImg_Container {
+    width: 100%;
+    height: 100vh;
+}
+
+.loginPageiImg_Container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.loginPage button {
+    font-weight: 900;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 55px;
+    width: 100%;
+    background-color: #F0349D;
+    border-color: #F0349D;
+}
+
+.loginPage button:hover {
+    background-color: #F0349D;
+    border-color: #F0349D;
+}
+.loginPage button:focus-visible {
+    background-color: #F0349D !important;
+    border-color: #F0349D !important;
+    outline: none !important;
+}
+
+.loginPage button:focus{
+    background-color: #F0349D !important;
+    border-color: #F0349D !important;
+    outline: none !important;
+}
+.loginPage input {
+    border-radius: 30px;
+    padding-left: 45px;
+    font-size: 20px;
+    margin-top: 56px;
+    margin-bottom: 40px;
+    height: 55px;
+}
+
+.loginPage input::placeholder {
+    font-size: 18px;
+}
+
+.loginPage h2 {
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: 34px;
+    margin-bottom: 130px !important;
+}
+
+.loginPage {
+    width: 450px !important;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+@media (max-width: 991px) {
+
+    .loginPageiImg_Container {
+        display: none;
+    }
+
+    .loginPage {
+        width: 350px !important;
+        z-index: 100;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+    .loginPage h2 {
+        margin-bottom: 100px !important;
+    }
+
+    .loginPage button {
+        font-weight: 900;
+        border-radius: 30px;
+        font-size: 25px;
+        margin-top: 75px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    .loginPage {
+        width: 300px !important;
+    }
+}
+

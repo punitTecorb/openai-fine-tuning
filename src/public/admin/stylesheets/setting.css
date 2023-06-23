@@ -1,0 +1,90 @@
+/* ////////////////////////////////////////Start Common/////////////////////////////// */
+input, select {
+    border-color: #FFC2E4 !important;
+    height: 50px !important;
+}
+select {
+    cursor: pointer;
+}
+.submitBtn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.submitBtn button {
+    background: #F657B0;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    min-width: 100px;
+    border-radius: 10px;
+    text-align: center;
+}
+/* /////////////////////////////////////////////End Common//////////////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////Start Change Password /////////////////////////////////////////// */
+
+.changePasswordContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.changePasswordContainer .innerContainer {
+    border: 3px solid #FF8fCE;
+    border-radius: 5px;
+    padding: 25px 37px 0px 37px;
+    background-color: #FFFFFF;
+    width: 600px;
+}
+/* ///////////////////////////////////////////End Change Password /////////////////////////////////////////// */
+
+
+/* ///////////////////////////////////////////Start App Version/////////////////////////////////////////// */
+.appVersionContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.appVersionContainer .innerContainer .panelContainer{
+    border: 1px solid #FF8fCE;
+}
+.appVersionContainer .innerContainer .panelContainer .panelHeading{ 
+    background-color: #F657B0;
+}
+
+.appVersionContainer .innerContainer .panelContainer .panelHeading{ 
+    padding: 10px;
+}
+.appVersionContainer .innerContainer .panelContainer .PannelContent{
+    padding: 10px;
+}
+/* ///////////////////////////////////////////End App Version/////////////////////////////////////////// */
+
+@media screen and (max-width:640px) {
+    .changePasswordContainer {
+        margin-top: 30px;
+    }
+
+    .changePasswordContainer .innerContainer {
+        width: 100%;
+    }
+    .appVersionContainer {
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width:425px) {
+    .changePasswordContainer {
+        margin-top: 30px;
+    }
+
+    .changePasswordContainer .innerContainer {
+        width: 100%;
+        padding: 10px 10px 0px 10px;
+
+    }
+}

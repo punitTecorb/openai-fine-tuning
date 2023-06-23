@@ -1,0 +1,88 @@
+main {
+    background-color: white;
+}
+
+.UserListContainer .innerContainer .topContainer button {
+    background-color: #F0349D;
+    border: 1px solid #F0349D;
+    color: #fff;
+    padding: 8px 10px;
+    min-width: 120px;
+    border-radius: 8px;
+}
+.UserListContainer .innerContainer .topContainer button:focus{
+    outline: none !important;
+}
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.searchArea .userSelect {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    background: url('../../admin/assets/img/icons/downarrow.svg');
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: 15px;
+    min-width: 80px;
+}
+
+.searchArea .userSelect:focus-visible {
+    outline: none !important;
+}
+
+.searchArea .activeInActive {
+    padding: 10px 10px 10px 30px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    background: url('../../admin/assets/img/icons/filter.svg');
+    background-repeat: no-repeat;
+    background-position: 5%;
+    background-size: 15px;
+    min-width: 80px;
+}
+
+.searchArea .activeInActive:focus-visible {
+    outline: none !important;
+}
+
+.searchBox input{
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: url('../../admin/assets/img/icons/downarrow.svg');
+    background-repeat: no-repeat;
+    background-position: 5%;
+    background-size: 15px;
+}
+
+.searchBox input:focus-visible{
+    outline: none !important;
+}
+.UserListContainer .innerContainer .userListTable {
+    width: 100%;
+    overflow: auto;
+}
+
+table tbody tr td .profileImg {
+    width: 40px;
+    height: 40px;
+}
+
+table tbody tr td .profileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

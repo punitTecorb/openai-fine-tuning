@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin | Name</title>
+    <link rel="icon" href="../../admin/assets/img/favicon.png" type="image" />
+    <link href="../../admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- <link href="../../admin/assets/css/animate.css" rel="stylesheet" /> -->
+    <link href="../../admin/stylesheets/navbar.css" rel="stylesheet" />
+    <link href="../../admin/stylesheets/dashboard.css" rel="stylesheet" />
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle" />
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span><img src=".." /></span><span>AI Chat Bot</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin/dashboard" class="active">
+                        <span><img src=".." /></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span><img src=".." /></span>
+                        <span>Reviews</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/FAQ">
+                        <span><img src=".." /></span>
+                        <span>FAQs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span><img src=".." /></span>
+                        <span>Notification</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/user">
+                        <span><img src=".." /></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-cogs"></i> <span class="nav-label">Settings</span></a>
+                    <ul class="nav nav-second-level">
+                        <li id="app-nav"><a href="/admin/appversion">App Version</a></li>
+                        <li id="changepassword-nav"><a href="/admin/changepassword">Change Password</a></li>
+                    </ul>
+                </li>
+                <li class="bottomProfileSection">
+                    <div class="d-flex align-item-center justify-content-between">
+                        <div class="d-flex align-item-center mr-3">
+                            <div class="profileImg"><img src=".." /></div>
+                            <div class="ml-2">
+                                <h6>Olivia Rhye</h6>
+                                <h6>olivia@unititledui.com</h6>
+                            </div>
+                        </div>
+                        <a onclick="logout();">Logout <img src="../../../admin/assets/img/logout 1.png"> </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </h2>
+        </header>
+        <main>
+            <div class="UserListContainer">
+                <div class="innerContainer">
+                    <div class="d-flex align-items-center justify-content-between topContainer">
+                        <div>
+                            <h2>Welcome back, Olivia</h2>
+                            <p>Track, manage and forecast your customer and orders.</p>
+                        </div>
+                        <button><img src="''" class="mr-2" />Create post</button>
+                    </div>
+                    <div class="cardsArea row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="d-flex align-item-center justify-content-between">
+                                    <h6>Total User</h6>
+                                    <Button class="threedotBtn"><img src="../../../admin/assets/img/icons/dropdown.svg" /></Button>
+                                </div>
+                                <div class="d-flex align-item-center justify-content-between mt-4">
+                                    <div>
+                                        <h1>2,420</h1>
+                                        <p><img src=".." /> <span class="percentage">40%</span> vs last month</p>
+                                    </div>
+                                    <div>
+                                        <img src=".."/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="d-flex align-item-center justify-content-between">
+                                    <h6>Total User</h6>
+                                    <Button class="threedotBtn"><img src="../../../admin/assets/img/icons/dropdown.svg" /></Button>
+                                </div>
+                                <div class="d-flex align-item-center justify-content-between mt-4">
+                                    <div>
+                                        <h1>2,420</h1>
+                                        <p><img src=".." /> <span class="percentage">40%</span> vs last month</p>
+                                    </div>
+                                    <div>
+                                        <img src=".."/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="d-flex align-item-center justify-content-between">
+                                    <h6>Total User</h6>
+                                    <Button class="threedotBtn"><img src="../../../admin/assets/img/icons/dropdown.svg" /></Button>
+                                </div>
+                                <div class="d-flex align-item-center justify-content-between mt-4">
+                                    <div>
+                                        <h1>2,420</h1>
+                                        <p><img src=".." /> <span class="percentage">40%</span> vs last month</p>
+                                    </div>
+                                    <div>
+                                        <img src=".."/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="searchArea">
+                        <div></div>
+                    </div>
+                    <div class="userListTable">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Users</th>
+                                    <th scope="col">Posts</th>
+                                    <th scope="col">Followers</th>
+                                    <th scope="col">Following</th>
+                                    <th scope="col">Likes</th>
+                                    <th scope="col">Comments</th>
+                                    <th scope="col">Shares</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="d-flex align-item-center">
+                                        <div class="profileImg"><img src=".." /></div>
+                                        <div>
+                                            <h4>Aman</h4>
+                                            <p>@aman</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>Electricity</h4>
+                                        <p>sdfghjkhgfdfghj</p>
+                                    </td>
+                                    <td>150</td>
+                                    <td>150</td>
+                                    <td>25,040 Likes</td>
+                                    <td>245...</td>
+                                    <td>150</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="../../admin/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="../../admin/assets/js/popper.min.js"></script>
+    <script src="../../admin/assets/js/bootstrap.js"></script>
+    <script>
+        var host = window.location.protocol + "//" + window.location.host;
+        function mainFunction() {
+            var token = localStorage.getItem("token");
+            if (token) {
+                window.location.replace("/admin/dashboard");
+            }
+        }
+
+        //******Search value by Enter**************/
+        $("#password").keyup(function (event) {
+            if (event.keyCode === 13) {
+                $("#btnId").click();
+            }
+        });
+    </script>
+    <script src="../../admin/scripts/auth/login.js"></script>
+</body>
+
+</html>
