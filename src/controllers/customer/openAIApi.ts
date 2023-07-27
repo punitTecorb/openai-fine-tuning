@@ -22,21 +22,22 @@ function resByUserRole(data:any):Promise<any>{
                 "messages": [{"role": "user", "content": content}],
                 "temperature": 0.7        
             }
-            request({
-                url: "https://api.openai.com/v1/chat/completions",
-                method: "POST",
-                json: true,   // <--Very important!!!
-                headers:{
-                    'content-type':'application/json',
-                    'Authorization':'Bearer Your Authorization Token'
-                },
-                body: obj
-            }, function (error, response, body){
-                if(error){
-                    reject(error);
-                }
-                resolve(response.body);
-            });
+            // request({
+            //     url: "https://api.openai.com/v1/chat/completions",
+            //     method: "POST",
+            //     json: true,   // <--Very important!!!
+            //     headers:{
+            //         'content-type':'application/json',
+            //         'Authorization':'Bearer Your Authorization Token'
+            //     },
+            //     body: obj
+            // }, function (error, response, body){
+            //     if(error){
+            //         reject(error);
+            //     }
+            //     resolve(response.body);
+            // });
+            resolve({});
         }catch(err){
             console.log(err);
             reject(err);
@@ -54,21 +55,22 @@ function resByAssistantRole(data:any):Promise<any>{
                 "messages": [{"role": "assistant", "content": content}],
                 "temperature": 0.7        
             }
-            request({
-                url: "https://api.openai.com/v1/chat/completions",
-                method: "POST",
-                json: true,   // <--Very important!!!
-                headers:{
-                    'content-type':'application/json',
-                    'Authorization':'Bearer Your Authorization Token'
-                },
-                body: obj
-            }, function (error, response, body){
-                if(error){
-                    reject(error);
-                }
-                resolve(response.body);
-            });
+            // request({
+            //     url: "https://api.openai.com/v1/chat/completions",
+            //     method: "POST",
+            //     json: true,   // <--Very important!!!
+            //     headers:{
+            //         'content-type':'application/json',
+            //         'Authorization':'Bearer Your Authorization Token'
+            //     },
+            //     body: obj
+            // }, function (error, response, body){
+            //     if(error){
+            //         reject(error);
+            //     }
+            //     resolve(response.body);
+            // });
+            resolve({});
         }catch(err){
             console.log(err);
         }
@@ -85,21 +87,22 @@ function resBySystemRole(data:any):Promise<any>{
                 "messages": [{"role": "system", "content": content}],
                 "temperature": 0.7        
             }
-            request({
-                url: "https://api.openai.com/v1/chat/completions",
-                method: "POST",
-                json: true,   // <--Very important!!!
-                headers:{
-                    'content-type':'application/json',
-                    'Authorization':'Bearer Your Authorization Token'
-                },
-                body: obj
-            }, function (error, response, body){
-                if(error){
-                    reject(error);
-                }
-                resolve(response.body);
-            });
+            // request({
+            //     url: "https://api.openai.com/v1/chat/completions",
+            //     method: "POST",
+            //     json: true,   // <--Very important!!!
+            //     headers:{
+            //         'content-type':'application/json',
+            //         'Authorization':'Bearer Your Authorization Token'
+            //     },
+            //     body: obj
+            // }, function (error, response, body){
+            //     if(error){
+            //         reject(error);
+            //     }
+            //     resolve(response.body);
+            // });
+            resolve({});
         }catch(err){
             console.log(err);
             reject(err);
