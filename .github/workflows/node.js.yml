@@ -2,20 +2,16 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Node.js CI
-
 on:
   push:
     branches: ["main"]
-
 jobs:
   build:
-
     runs-on: self-hosted
-
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/sudo  chmod 777 actions-runner/
 
     steps:
     - uses: actions/checkout@v3
