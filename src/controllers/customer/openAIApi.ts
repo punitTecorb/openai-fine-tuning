@@ -1,10 +1,11 @@
-import request from 'request';
+//import request from 'request';
 import CircularJSON from 'circular-json';
 import { Configuration, OpenAIApi } from 'openai';
 import { rejects } from 'assert';
 import fs from 'fs';
 import FormData from 'form-data';
 import path  from 'path';
+const request  = 'request';
 const coolPath = path.join(__dirname, 'ruby.jsonl');
 const configuration = new Configuration({
     apiKey: process.env.key
