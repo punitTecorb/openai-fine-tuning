@@ -5,7 +5,7 @@ import { rejects } from 'assert';
 import fs from 'fs';
 import FormData from 'form-data';
 import path  from 'path';
-const request  = 'request';
+const request:any  = 'request';
 const coolPath = path.join(__dirname, 'ruby.jsonl');
 const configuration = new Configuration({
     apiKey: process.env.key
